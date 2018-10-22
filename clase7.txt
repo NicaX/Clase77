@@ -1,0 +1,106 @@
+Por aritmetica de punteros, 
+
+x=*(p+4)  == x=array[4]
+
+
+GDM????????
+
+la pila es una pamemoria que, seria una parte de la ram, guarda las funciones
+(
+luego el Segmento de codigo, que es donde pvan a parar las funciones, el llamado a las funciones
+
+y la parte esatica ue esada
+
+y el hit, se usa para crear variables de manera dinamica
+
+
+
+Funcion malloc
+le dice al sist op que vaya a la ram y busque un seg de memoria para poder uardar un dato
+lo que devuelve es una dir de memoria
+
+(malloc devuelve un puntero a void)
+size_t == cant de bytes
+
+EJEMPLO-----------------
+
+	int* pEntero;
+   	pEntero= malloc(sizeof(int));
+
+malloc va a buscar en la memoria libre 4 bits y va a devolver la direccion de memoria de
+los mismos,
+si no ecuentra la memoria devuelve NULL
+
+
+	int* pEntero;
+	pEntero= malloc(sizeof(int));
+	*pEntero=9;
+   	printf("%d", *pEntero);
+
+hay que asegurarnos antes de usar el puntero, de que el puntero este apuntando a algo
+
+if(pEntero!=NULL)
+{
+	int* pEntero;
+	pEntero= malloc(sizeof(int));
+	*pEntero=9;
+   	printf("%d", *pEntero);
+}
+
+ahora, como condicion (buena practica)
+como malloc devuelve void, hay que castear el tipo de dato
+
+pEntero=(int*)malloc(sizeof(int));
+
+
+    
+****************** 
+
+pEntero=(int*)malloc(sizeof(int));
+
+       es lo mismo que
+
+pEntero=&variable;
+   
+******************
+
+pEntero=(int*)malloc(sizeof(int)*5);
+
+una var ue esta en la pila, que apunta a un vector que esta en el hit
+
+if(pEntero!=NULL) ==> osea ue ecuentra 20 bits consecutivos de memoria disponible
+{
+
+
+}
+
+Malloc crea en el heatptottptp
+
+REALLOC sirve para modificar una variable
+
+
+tiene que haber un malloc primero que reserve el espacio en memoria
+
+pEntero=realloc(pEntero, sizeof(int)*10); 
+
+va a buscar 20 espacios mas en la memoria, seguidos a los 20 reservados en el malloc
+
+en caso de no encontrar 20 espacios seguidos, borra los 20 del malloc y asigna 40 seguidos
+en otro lugar
+
+eso lo hace a traves de la funcion ""free(pEntero)""
+
+si tampoco encontro otros 40 seguidos, va a devolver null, 
+
+***********el realloc ejecuta un free automaticamente**************
+
+
+
+
+
+
+
+
+
+
+
